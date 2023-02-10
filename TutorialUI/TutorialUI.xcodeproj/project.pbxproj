@@ -13,6 +13,7 @@
 		181E27B42994924E005A546E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181E27B32994924E005A546E /* Preview Assets.xcassets */; };
 		181E27BC299496C1005A546E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E27BB299496C1005A546E /* CardView.swift */; };
 		18AAB65E2996A64F00CE4C59 /* CardFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AAB65D2996A64F00CE4C59 /* CardFile.swift */; };
+		18AAB6602996A70800CE4C59 /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AAB65F2996A70800CE4C59 /* CardData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		181E27BA299494BA005A546E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		181E27BB299496C1005A546E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		18AAB65D2996A64F00CE4C59 /* CardFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFile.swift; sourceTree = "<group>"; };
+		18AAB65F2996A70800CE4C59 /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				181E27B22994924E005A546E /* Preview Content */,
 				181E27BB299496C1005A546E /* CardView.swift */,
 				18AAB65D2996A64F00CE4C59 /* CardFile.swift */,
+				18AAB65F2996A70800CE4C59 /* CardData.swift */,
 			);
 			path = TutorialUI;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18AAB6602996A70800CE4C59 /* CardData.swift in Sources */,
 				181E27AF2994924C005A546E /* ContentView.swift in Sources */,
 				181E27BC299496C1005A546E /* CardView.swift in Sources */,
 				181E27AD2994924C005A546E /* TutorialUIApp.swift in Sources */,
