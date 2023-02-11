@@ -14,16 +14,19 @@ struct CardView: View {
     @State private var fadeIn: Bool = false
     @State private var moveDownward: Bool = false
     @State private var moveUpward: Bool = false
-
+    @State private var showAlert: Bool = false
     var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
+    
     //MARK: - CARD
     
     var body: some View {
         ZStack {
             Image(card.imageName)
                 .resizable()
-                .scaledToFill()
+                .scaledToFit()
                 .opacity(fadeIn ? 1.0 : 0.0)
+                .frame(width: UIScreen.main.bounds.size.width)
+
             VStack {
                 Spacer()
                 Spacer()
@@ -48,6 +51,7 @@ struct CardView: View {
                     Button {
                         playSound(sound: "sound-chime", type: "mp3")
                         hapticImpact.impactOccurred()
+                        showAlert.toggle()
                     } label: {
                         HStack {
                             Text(card.callToAction.uppercased())
@@ -63,7 +67,7 @@ struct CardView: View {
                         .padding(.vertical)
                         .background(LinearGradient(colors: card.gradientColor, startPoint: .leading, endPoint: .trailing))
                         .clipShape(Capsule())
-                        .shadow(color: Color("ColorShadow"), radius: 6)//x: 0 , y: 3
+                        .shadow(color: Color("ColorShadow"), radius: 1, x: 0 , y: 4)
                     }
                     .offset(y: moveUpward ? 100 : 200)
                 }
@@ -73,8 +77,7 @@ struct CardView: View {
             }
         }
         .background(LinearGradient(colors: card.gradientColor, startPoint: .top, endPoint: .bottom))
-//        .cornerRadius(16)
-        .shadow(color: Color.black ,radius: 8)
+        .shadow(color: Color.black ,radius: 5)
         .onAppear() {
             withAnimation(.linear(duration: 1.2)) {
                 self.fadeIn.toggle()
@@ -85,6 +88,13 @@ struct CardView: View {
             withAnimation(.linear(duration: 0.8)) {
                 self.moveUpward.toggle()
             }
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text(card.title),
+                message: Text(card.headline),
+                dismissButton: .default(Text("Ok"))
+            )
         }
     }
     
